@@ -7,18 +7,40 @@ Runs efficiently on a **standard laptop or cloud CPU** using the world's fastest
 
 ---
 
-## ⚡ Key Features
+## 🚀 Try It Now (No Setup Required)
 
-* **Zero GPU Required** — Uses Deepgram (STT/TTS) + Groq/OpenAI (LLM).
-* **Sub-500ms Latency** — Streaming pipeline starts speaking before generation finishes.
-* **Smart Interruption** — Full-duplex mode: bot stops speaking when you talk.
-* **High-Fidelity 48kHz Audio** — No upsampling artifacts, smooth streaming experience.
+**Just click the link below to start talking:**
+
+👉 **[Launch AuraSpeak Voice Bot](https://auraspeak.up.railway.app)**
+
+*(Note: Replace the link above with your actual deployed Railway URL)*
 
 ---
 
-## 📂 File Structure
+## ⚡ Key Features
 
-### **1. Core Backend**
+* **Zero Setup Needed** — Works instantly in your browser.
+* **Sub-500ms Latency** — It responds almost instantly, like a real person.
+* **Smart Interruption** — You can interrupt it anytime, just like a real conversation.
+* **High-Fidelity Audio** — Crystal clear voice quality.
+
+---
+
+## 🎮 How to Use
+
+1. **Click the Link** above to open the web app.
+2. **Tap the Glowing Orb** in the center.
+3. **Allow Microphone Access** when asked.
+4. **Speak Naturally** — Ask about my life, my superpower, or anything else!
+5. **Interrupt Anytime** — If I'm talking too much, just speak over me.
+
+---
+
+## 📂 For Developers (Technical Details)
+
+If you want to run this code yourself or understand how it works:
+
+### **Core Backend**
 
 | File                         | Role                                                                              |
 | ---------------------------- | --------------------------------------------------------------------------------- |
@@ -28,162 +50,37 @@ Runs efficiently on a **standard laptop or cloud CPU** using the world's fastest
 | `audio_in.py`                | Receives raw mic audio and prepares it safely for transcription.                  |
 | `llm_module.py`              | LLM wrapper for Groq, OpenAI, MegaLLM with streaming text output.                 |
 | `audio_module.py`            | Text-to-Speech module (Deepgram). Streams generated audio back to client.         |
-| `text_context.py`            | Splits responses into natural sentence chunks for early speech.                   |
-| `text_similarity.py`         | Prevents echo: filters out bot-generated speech inputs.                           |
 
----
-
-### **2. Utilities**
-
-| File                | Description                                 |
-| ------------------- | ------------------------------------------- |
-| `colors.py`         | ANSI color styling for readable logs.       |
-| `logsetup.py`       | Central logging setup (timestamps, levels). |
-| `requirements.txt`  | Lightweight dependency list.                |
-| `environment.yml`   | Conda environment configuration.            |
-| `start_unix.sh`     | One-click launcher for macOS/Linux.         |
-| `start_windows.bat` | One-click launcher for Windows.             |
-
----
-
-### **3. Frontend (`/static`)**
+### **Frontend (`/static`)**
 
 | File                      | Purpose                                                      |
 | ------------------------- | ------------------------------------------------------------ |
 | `index.html`              | Main UI with grid layout + glowing core animation.           |
 | `app.js`                  | Manages WebSockets, animations, audio context, and UI logic. |
-| `pcmWorkletProcessor.js`  | Captures raw mic input in a worker thread.                   |
-| `ttsPlaybackProcessor.js` | Plays response audio smoothly with timing control.           |
 
 ---
 
-## 🛠 Installation Guide
+## 🛠 Manual Installation (Optional)
 
-### **Prerequisites**
+**You do NOT need to install anything to use the bot.** But if you want to run the code locally:
 
-* API Keys:
-
-  * `Deepgram` (Voice)
-  * `Groq` or `OpenAI`
-* Anaconda or Miniconda (recommended)
-
----
-
-### 🚀 One-Click Install (Recommended)
-
-#### **Windows**
-
-Run:
-
-```
-start_windows.bat
-```
-
-#### **macOS / Linux**
-
-```
-chmod +x start_unix.sh
-./start_unix.sh
-```
-
----
-
-### 🧰 Manual Installation
-
-#### **Step 1 — Clean Environment**
-
+### **1. Clone & Install**
 ```sh
-# Optional: remove old venv
-# Windows: rmdir /s /q venv
-# Mac/Linux: rm -rf venv
-```
+# Clone the repo
+git clone https://github.com/DIVYANSH-675/Auraspeak.git
+cd Auraspeak
 
-#### **Step 2 — Choose Setup**
-
----
-
-#### **Option A: Python venv**
-
-```sh
-python -m venv venv
-```
-
-Activate:
-
-```sh
-# Windows
-venv\Scripts\activate
-
-# Mac/Linux
-source venv/bin/activate
-```
-
-Install deps:
-
-```sh
+# Install dependencies
 pip install -r requirements.txt
 ```
 
----
-
-#### **Option B: Conda (Recommended)**
-
-```sh
-conda env create -f environment.yml
-conda activate auraspeak
-```
-
----
-
-### **Step 3 — Configure `.env`**
-
-Create `.env` or `.enve`:
-
-```
-DEEPGRAM_API_KEY=your_key
-GROQ_API_KEY=your_groq_key
-# OPENAI_API_KEY=optional
-
-STT_BACKEND=deepgram
-TTS_ENGINE=deepgram
-LLM_PROVIDER=groq
-LLM_MODEL=llama3-8b-8192
-
-DEEPGRAM_TTS_SAMPLE_RATE=48000
-```
-
----
-
-### **Step 4 — Run**
-
+### **2. Run the Server**
 ```sh
 python server.py
 ```
 
-Open browser:
-
-👉 `http://localhost:8000`
-
----
-
-## 🎮 How to Use
-
-1. **Tap the core glow orb**
-2. **Allow microphone access**
-3. **Speak naturally**
-4. **Interrupt anytime — it will stop and listen**
-5. **Scroll chat history with ↑**
-6. **Press PURGE to reset context**
-
----
-
-## ⚠ Troubleshooting
-
-| Issue            | Fix                                              |
-| ---------------- | ------------------------------------------------ |
-| Chipmunk voice   | Ensure `DEEPGRAM_TTS_SAMPLE_RATE=48000`          |
-| No connection    | Check API keys and firewall (WebSocket required) |
-| Mic not detected | Allow browser permissions / use localhost        |
+### **3. Open Browser**
+Go to `http://localhost:8000`
 
 ---
 
@@ -191,5 +88,3 @@ Open browser:
 
 **Divyansh Gupta**
 🚀 Building the future of ambient AI.
-
----
