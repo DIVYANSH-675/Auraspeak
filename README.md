@@ -60,27 +60,26 @@ If you want to run this code yourself or understand how it works:
 
 ---
 
-## 🛠 Manual Installation (Optional)
+## 💻 Run Locally (Windows/Mac/Linux)
 
-**You do NOT need to install anything to use the bot.** But if you want to run the code locally:
+Since the configuration is already set up, you can run this on your own computer easily!
 
-### **1. Clone & Install**
-```sh
-# Clone the repo
-git clone https://github.com/DIVYANSH-675/Auraspeak.git
-cd Auraspeak
+### **Windows Users**
+1. Download the code (Click "Code" -> "Download ZIP" and extract it).
+2. Double-click the `start_windows.bat` file.
+3. That's it! The bot will open in your browser.
 
-# Install dependencies
-pip install -r requirements.txt
-```
+### **Mac / Linux Users**
+1. Open your terminal in the folder.
+2. Run this command:
+   ```sh
+   ./start_unix.sh
+   ```
+3. The bot will launch instantly.
 
-### **2. Run the Server**
-```sh
-python server.py
-```
+---
 
-### **3. Open Browser**
-Go to `http://localhost:8000`
+## 🛠 Manual Installation (For Developers)
 
 ---
 
