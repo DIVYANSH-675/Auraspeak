@@ -22,7 +22,7 @@ wheels/
 
 # Environment variables (IMPORTANT: Contains API keys!)
 .env
-.enve
+#.enve
 .env.local
 .env.*.local
 
