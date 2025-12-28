@@ -1,4 +1,4 @@
-AuraSpeak 🧠🔊
+## AuraSpeak 🧠🔊
 
 A high-performance, ultra-low latency **API-first voice agent** designed for real-time interaction.
 Built for **speed, scalability, and ambient computing** experiences.
